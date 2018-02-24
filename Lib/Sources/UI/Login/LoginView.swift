@@ -10,19 +10,8 @@ import Foundation
 import SnapKit
 import Style
 
-public protocol LoginPresentationModel {
-    
-    var usernamePlaceholder: String? { get }
-    var passwordPlaceholder: String? { get }
-    
-    func textFieldAdapter(textField: UITextField) -> TextFieldAdapter
-    
-    func applyStyle(view: LoginViewImpl)
-    func applyLayout(view: LoginViewImpl)
-}
-
 public protocol LoginView {
-    var eventHandler: EventHandler<LoginViewEvent>? { get }
+    var eventHandler: EventHandler<LoginViewEvent>? { get set }
     
     var isLoading: Bool { get set }
     func setLoading(_ loading: Bool, animated: Bool)
@@ -35,7 +24,14 @@ public enum LoginViewEvent {
     case register
 }
 
-public class LoginViewImpl: RootView<LoginPresentationModel>, LoginView, UITextFieldDelegate {
+public protocol LoginViewSubviews {
+    var usernameTextField: UITextField { get }
+    var passwordTextField: UITextField { get }
+    var loginButton: UIButton { get }
+    var registerButton: UIButton { get }
+}
+
+public class LoginViewImpl: RootView<LoginPresentationModel>, LoginView, LoginViewSubviews {
     
     // MARK: -
     // MARK: Properties
@@ -97,11 +93,17 @@ public class LoginViewImpl: RootView<LoginPresentationModel>, LoginView, UITextF
     open override func fill(from model: LoginPresentationModel) {
         super.fill(from: model)
         
-        self.usernameTextField.placeholder = model.usernamePlaceholder
-        self.passwordTextField.placeholder = model.passwordPlaceholder
-        
-        model.applyStyle(view: self)
-        model.applyLayout(view: self)
+        model.eventHandler = { [weak self] model in
+            setup(self?.usernameTextField) {
+                $0.placeholder = model.usernamePlaceholder
+                $0.text = model.username
+            }
+            
+            setup(self?.passwordTextField) {
+                $0.placeholder = model.passwordPlaceholder
+                $0.text = model.password
+            }
+        }
     }
     
     // MARK: -

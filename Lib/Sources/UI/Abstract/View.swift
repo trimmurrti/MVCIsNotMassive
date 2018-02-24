@@ -1,5 +1,5 @@
 //
-//  ControllerAssembly.swift
+//  View.swift
 //  Lib
 //
 //  Created by Oleksa 'trimm' Korin on 2/24/18.
@@ -8,9 +8,8 @@
 
 import Foundation
 
-public protocol Assembly {
+public protocol View: ViewConvertible {
     associatedtype Model
-    associatedtype View: Lib.View
     
-    func view(model: Model) -> View
+    var model: Model { get }
 }

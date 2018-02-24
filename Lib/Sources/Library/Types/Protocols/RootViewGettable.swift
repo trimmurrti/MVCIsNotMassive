@@ -9,7 +9,7 @@
 import UIKit
 
 public protocol RootViewGettable {
-    associatedtype RootViewType: UIView
+    associatedtype RootViewType
     
     var viewIfLoaded: UIView? { get }
     var rootView: RootViewType? { get }

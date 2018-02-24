@@ -14,7 +14,7 @@ precedencegroup Composition {
 
 infix operator •: Composition
 
-public typealias Style<Type: UIView> = (Type) -> Void
+public typealias Style<Type> = (Type) -> Void
 public func • <Type: UIView>(lhs: @escaping Style<Type>, rhs: @escaping Style<Type>) -> Style<Type> {
     return { value in
         [lhs, rhs].forEach { $0(value) }

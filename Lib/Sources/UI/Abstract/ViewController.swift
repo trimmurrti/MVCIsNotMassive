@@ -12,8 +12,10 @@ public class ViewController<View, Model, Assembly>: UIViewController, RootViewGe
     where
     Model: Lib.Model,
     Assembly == Model.Assembly,
-    Assembly.Model == Model.Presentation
+    Assembly.Model == Model.Presentation,
+    Assembly.View.Model == Model.Presentation
 {
+    
     
     // MARK: -
     // MARK: Subtypes
@@ -46,7 +48,7 @@ public class ViewController<View, Model, Assembly>: UIViewController, RootViewGe
     // MARK: View Lifecycle
     
     open override func loadView() {
-        self.view = self.assembly.view(model: self.model.presentation)
+        self.view = self.assembly.view(model: self.model.presentation).view
     }
     
     open override func viewDidLoad() {

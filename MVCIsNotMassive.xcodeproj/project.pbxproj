@@ -32,6 +32,11 @@
 		D73D5A212041BDF9003EF956 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73D5A202041BDF9003EF956 /* UITextField.swift */; };
 		D73D5A272041BE1F003EF956 /* Style.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D73D5A022041BDAB003EF956 /* Style.framework */; };
 		D73D5A2A2041CFDC003EF956 /* TextFieldAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73D5A292041CFDC003EF956 /* TextFieldAdapter.swift */; };
+		D73D5A2C2041EAA3003EF956 /* LoginPresentationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73D5A2B2041EAA3003EF956 /* LoginPresentationModel.swift */; };
+		D73D5A2F2041EBD2003EF956 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73D5A2E2041EBD2003EF956 /* Strings.swift */; };
+		D73D5A312041F322003EF956 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73D5A302041F322003EF956 /* View.swift */; };
+		D73D5A332041F3BE003EF956 /* ViewConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73D5A322041F3BE003EF956 /* ViewConvertible.swift */; };
+		D73D5A362041F474003EF956 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73D5A352041F474003EF956 /* User.swift */; };
 		D7461793204182AC00B0BED5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7461792204182AC00B0BED5 /* AppDelegate.swift */; };
 		D746179A204182AC00B0BED5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D7461799204182AC00B0BED5 /* Assets.xcassets */; };
 		D746179D204182AC00B0BED5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D746179B204182AC00B0BED5 /* LaunchScreen.storyboard */; };
@@ -131,6 +136,11 @@
 		D73D5A252041BE17003EF956 /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
 		D73D5A262041BE17003EF956 /* Style.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Style.h; sourceTree = "<group>"; };
 		D73D5A292041CFDC003EF956 /* TextFieldAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldAdapter.swift; sourceTree = "<group>"; };
+		D73D5A2B2041EAA3003EF956 /* LoginPresentationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresentationModel.swift; sourceTree = "<group>"; };
+		D73D5A2E2041EBD2003EF956 /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
+		D73D5A302041F322003EF956 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
+		D73D5A322041F3BE003EF956 /* ViewConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewConvertible.swift; sourceTree = "<group>"; };
+		D73D5A352041F474003EF956 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		D746178F204182AC00B0BED5 /* App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = App.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7461792204182AC00B0BED5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D7461794204182AC00B0BED5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -240,6 +250,7 @@
 			children = (
 				D7461799204182AC00B0BED5 /* Assets.xcassets */,
 				D746179B204182AC00B0BED5 /* LaunchScreen.storyboard */,
+				D73D5A2E2041EBD2003EF956 /* Strings.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -247,6 +258,7 @@
 		D73D59E020419182003EF956 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				D73D5A342041F468003EF956 /* Models */,
 				D73D59E7204196B1003EF956 /* Library */,
 				D73D59E1204192B1003EF956 /* UI */,
 			);
@@ -270,6 +282,7 @@
 				D73D59E32041935F003EF956 /* RootView.swift */,
 				D73D59E5204193CD003EF956 /* Model.swift */,
 				D73D59EA20419938003EF956 /* Assembly.swift */,
+				D73D5A302041F322003EF956 /* View.swift */,
 			);
 			path = Abstract;
 			sourceTree = "<group>";
@@ -296,6 +309,7 @@
 			isa = PBXGroup;
 			children = (
 				D73D59EE20419B8C003EF956 /* RootViewGettable.swift */,
+				D73D5A322041F3BE003EF956 /* ViewConvertible.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -315,6 +329,7 @@
 				D73D59F72041B0CF003EF956 /* LoginViewController.swift */,
 				D73D59F92041B0DB003EF956 /* LoginModel.swift */,
 				D73D59FB2041B0EE003EF956 /* LoginAssembly.swift */,
+				D73D5A2B2041EAA3003EF956 /* LoginPresentationModel.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -370,6 +385,14 @@
 				D73D5A292041CFDC003EF956 /* TextFieldAdapter.swift */,
 			);
 			path = Adapters;
+			sourceTree = "<group>";
+		};
+		D73D5A342041F468003EF956 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D73D5A352041F474003EF956 /* User.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		D7461786204182AC00B0BED5 = {
@@ -727,11 +750,16 @@
 			files = (
 				D73D59F82041B0CF003EF956 /* LoginViewController.swift in Sources */,
 				D73D59E42041935F003EF956 /* RootView.swift in Sources */,
+				D73D5A312041F322003EF956 /* View.swift in Sources */,
 				D73D59F220419F76003EF956 /* Optional+Extensions.swift in Sources */,
 				D73D59EF20419B8C003EF956 /* RootViewGettable.swift in Sources */,
 				D73D59E6204193CD003EF956 /* Model.swift in Sources */,
 				D73D59FA2041B0DB003EF956 /* LoginModel.swift in Sources */,
+				D73D5A362041F474003EF956 /* User.swift in Sources */,
+				D73D5A2F2041EBD2003EF956 /* Strings.swift in Sources */,
+				D73D5A332041F3BE003EF956 /* ViewConvertible.swift in Sources */,
 				D73D59F32041A451003EF956 /* ViewController.swift in Sources */,
+				D73D5A2C2041EAA3003EF956 /* LoginPresentationModel.swift in Sources */,
 				D73D59E9204196CD003EF956 /* Functions.swift in Sources */,
 				D73D59F62041B0C2003EF956 /* LoginView.swift in Sources */,
 				D73D59EB20419938003EF956 /* Assembly.swift in Sources */,

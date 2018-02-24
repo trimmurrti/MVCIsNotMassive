@@ -10,7 +10,7 @@ import Foundation
 
 public typealias EventHandler<Event> = (Event) -> ()
 
-public class RootView<Model>: UIView {
+public class RootView<Model>: UIView, View {
     
     // MARK: -
     // MARK: Properties
